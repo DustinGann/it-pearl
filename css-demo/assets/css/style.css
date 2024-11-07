@@ -1,0 +1,29 @@
+/* *//* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+
+    background-color:#F7F9FC ;
+}
+   
+main{
+
+    background-color:#e8ebf0 ;
+    width: 80vw;
+    margin: 40px auto 40px auto;
+    border: 4px solid #000000;
+    font-family: "Libre Baskerville", serif;
+    
+}
+
+header.primary{
+background-color: #5174A7;
+padding: 20px;
+background-image: url("https://assets.codepen.io/7248/bg_1.png");
+background-repeat:no-repeat;
+background-size: cover;
+}
