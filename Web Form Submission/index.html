@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <form id="SubmitExampleForm" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        
+        <label for="FirstName">First Name: </label>
+        <input type="text" id="FirstName" name="FirstName" size="30" maxlength="10">
+
+        <label for="MiddleInitial">Middle Initial: </label>
+        <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
+    
+       
+        <label for="LastName">Last Name: </label>
+        <input type="text" id="LastName" name="LastName" size="30" maxlength="10">
+
+
+        <label for="Email">Email: </label>
+        <input type="Email" id="Email" name="Email" size="30" maxlength="10">
+
+        
+        <label>Sex: </label>
+        <label for="M"><input type="radio" name="car" id="M" value="M">MAle</label>
+        <label for="F"><input type="radio" name="car" id="F" value="F">Female</label>
+        <label for="N"><input type="radio" name="car" id="N" value="N">N/A</label>
+
+        <label for="Birthday">Birthday: </label>
+        <input type="text" id="Birthday" name="Birthday" size="8" maxlength="8">
+
+        <label for="Height">Height : </label>
+        <input type="text" id="Height" name="Height" size="3" maxlength="3">
+
+        <label for="Weight">Height : </label>
+        <input type="text" id="Weight" name="Weight" size="3" maxlength="3">  PhoneNumber
+
+        <label for="PhoneNumber">Phone Number : </label>
+        <input type="text" id="PhoneNumber" name="PhoneNumber" size="14" maxlength="14">
+
+        <label>Auto: </label>
+        <select name="Auto" id="Auto">
+          <option value="">Select an Auto...</option>
+          <option value="S">Single</option>
+          <option value="M">Married</option>
+          <option value="D">Divorced</option>
+          <option value="L">Legally Separated</option>
+          <option value="W">Widowed</option>
+        </select>
+
+
+
+    <!--submit -->
+        <input type="submit" value="SubmitExample" Name="SubmitButton">
+    </form>
+    
+</body>
+</html>
