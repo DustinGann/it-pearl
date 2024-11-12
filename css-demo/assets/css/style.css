@@ -5,6 +5,16 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+
+
+
+  /*------------      Utility class       ------------*/
+.container{
+  padding:40px;
+  margin:auto;
+}
+
 body{
 
     background-color:#F7F9FC ;
@@ -26,4 +36,76 @@ padding: 20px;
 background-image: url("https://assets.codepen.io/7248/bg_1.png");
 background-repeat:no-repeat;
 background-size: cover;
+display:flex;
+gap: 20px;
+border-bottom:3px solid #ffffff;
+}
+
+header.primary h1,header.primary h2{
+margin:0;
+
+}
+
+header.primary h1 a{
+  color:#ffffff;
+  text-decoration: none;
+  font-size: 2.5rem;
+  text-shadow:2px 2px #000;
+}
+
+header.primary h2{ 
+  color:#ffffff;
+  text-shadow:2px 2px #000;
+
+}
+header.primary div.hgroup{
+  width: 70%;
+}
+header.primary nav{
+  width: 30%;
+}
+
+header.primary nav ul{
+  list-style-type: none;
+ margin:0;
+}
+
+header.primary nav li{
+  margin-bottom: 10px;
+
+}
+
+header.primary nav li a{
+  border: 2px solid #284A7D;
+  border-right:10px solid#284A7D;
+  border-radius: 20px 0;
+
+  background-color:rgba(231, 234, 238, 0.9);
+  color:#000;
+  display:block;
+  padding: 10px 10px 10px 0;
+  text-align:right;
+  transition: .5s;
+  text-decoration: none;
+}
+
+header.primary nav a:hover{
+  
+  background-color:rgba(12, 52, 111, 0.926);
+  text-decoration: underline;
+}
+
+
+
+#content{
+  line-height: 1.8rem;
+}
+
+
+#content h2,  #content h3{
+
+  color: #001536;
+  padding: 6.5px;
+  border-left:7px solid#284A7D;
+  
 }
