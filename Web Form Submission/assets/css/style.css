@@ -7,3 +7,8 @@
 }
 
 main{display: block;}
+
+.error {
+    color: red;
+    padding-left: 5px;
+}

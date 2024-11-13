@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="assets/css/style.css" rel="stylesheet" />
+
+   
+
+    
 </head>
 <body>
 <h1>New patient registration</h1>
 <h3>plese fill out the form below</h3>
+
+
+
+    
+    
     <form id="SubmitExampleForm" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
         <div>
         <label for="FirstName" class="formlabel">First Name: </label>
-        <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" >
-        </div>
+        <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" data-rule-required="true" data-msg-required="First Name is Required" class="error" aria-invalid="true">
+        <label for="FirstName" class="error"></label><br>
+    </div>
+
+
         <div>
         <label for="MiddleInitial" class="formlabel">Middle Initial: </label>
         <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
@@ -73,6 +85,7 @@
    
         <label class="formlabel">State</label>
         <select name="State" id="State">
+            <option value="--">Select</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -149,6 +162,11 @@
     <!--submit -->
         <input type="submit" value="SubmitExample" Name="SubmitButton">
     </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+   
     
 </body>
 </html>
