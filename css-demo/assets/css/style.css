@@ -6,6 +6,10 @@ html {
     box-sizing: inherit;
   }
 
+  img{
+    max-width: 100%;
+  }
+
 
 
 
@@ -102,10 +106,87 @@ header.primary nav a:hover{
 }
 
 
-#content h2,  #content h3{
+#content h2,  #content h3, article.widget h2{
 
   color: #001536;
   padding: 6.5px;
   border-left:7px solid#284A7D;
   
 }
+
+
+#blog{
+
+}
+
+#blog.container {
+  background-color:rgb(224, 225, 234);
+  padding:20px 0;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid #ffffff;
+
+}
+
+#blog > h2{
+  margin-left: 25px;
+}
+
+#blog article.post{
+background-color: rgb(239, 240, 246);
+margin: 20px;
+padding: 20px;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows:auto;
+gap: 20px;
+grid-template-areas: 
+"figure header header"
+"figure post-content post-content"
+"figure footer footer"
+;
+}
+
+#blog article figure{
+grid-area: figure;
+margin:0;
+}
+#blog article header{
+grid-area:header;
+}
+#blog article .post-content{
+grid-area: post-content;
+}
+#blog article .post-meta{
+grid-area:footer;
+}
+
+#blog article header h2{
+  
+  margin-bottom:0;
+}
+
+#blog article header h2 a{
+  color: black;
+  text-decoration: none;
+  font-size: 2.3rem;
+  
+}
+
+#blog article .post-content p{
+  font-size: 1.2rem;
+}
+
+aside .container{
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+
+#colophon{
+text-align: center;
+background-color: #001536;
+color: #F7F9FC;
+
+}
+
+
