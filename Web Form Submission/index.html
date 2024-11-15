@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="assets/css/style.css" rel="stylesheet" />
-    <script defer src="assets/js/scrips.js"></script>
+    <script defer src="assets/js/scripts.js"></script>
 
    
 
@@ -22,7 +22,7 @@
     <form id="SubmitExampleForm" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
         <div>
         <label for="FirstName" class="formlabel">First Name: </label>
-        <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" data-rule-required="true" data-msg-required="First Name is Required" class="error" aria-invalid="true">
+        <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" data-rule-required="true" data-msg-required="First Name is Required" aria-invalid="true">
         <label for="FirstName" class="error"></label><br>
     </div>
 
@@ -30,43 +30,51 @@
         <div>
         <label for="MiddleInitial" class="formlabel">Middle Initial: </label>
         <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
+        
     </div>
     <div>
        
         <label for="LastName" class="formlabel">Last Name: </label>
-        <input type="text" id="LastName" name="LastName" size="30" maxlength="30">
+        <input type="text" id="LastName" name="LastName" size="30" maxlength="30" data-rule-required="true" data-msg-required="Last Name is Required">
+        <label for="LastName" class="error"></label><br>
     </div>
     <div>
 
         <label for="Email" class="formlabel">Email: </label>
-        <input type="Email" id="Email" name="Email" size="30" maxlength="10">
+        <input type="Email" id="Email" name="Email" size="30" maxlength="10" data-rule-required="true" data-msg-required="Invalid Email" data-rule-email="true" data-msg-email="Invalid Email">
+        <label for="Email" class="error"></label><br>
     </div>
     <div>
         
-        <label class="formlabel">Sex: </label>
-        <label for="M"><input type="radio" name="car" id="M" value="M">MAle</label>
-        <label for="F"><input type="radio" name="car" id="F" value="F">Female</label>
-        <label for="N"><input type="radio" name="car" id="N" value="N">N/A</label>
+        <label class="formlabel" name="Gender" data-rule-required="true" data-msg-required="Gender is Required">Sex: </label>
+        <label for="M"><input type="radio" name="Gender" id="M" value="M" >Male</label>
+        <label for="F"><input type="radio" name="Gender" id="F" value="F">Female</label>
+        <label for="N"><input type="radio" name="Gender" id="N" value="N">N/A</label>
+        <label for="Gender" class="error"></label><br>
     </div>
     <div>
         <label for="Birthday" class="formlabel">Birthday: </label>
-        <input type="text" id="Birthday" name="Birthday" size="8" maxlength="8">
+        <input type="text" id="Birthday" name="Birthday" size="8" maxlength="8" data-rule-required="true" data-msg-required="Birth day Required" data-rule-date="true" data-msg-date="Date must be MM/DD/YYYY format">
+        <label for="Birthday" class="error"></label><br>
     </div>
     <div>
         <label for="Height" class="formlabel">Height : </label>
-        <input type="text" id="Height" name="Height" size="3" maxlength="3">
+        <input type="text" id="Height" name="Height" size="3" maxlength="3" data-rule-required="true" data-msg-required="height is Required" data-rule-min="12" data-msg-min="must be greater than 12" data-rule-max="120" data-msg-max="must be less than 120">
+        <label for="Height" class="error"></label><br>
     </div>
     <div>
-        <label for="Weight" class="formlabel">Height : </label>
-        <input type="text" id="Weight" name="Weight" size="3" maxlength="3">  PhoneNumber
+        <label for="Weight" class="formlabel">Weight : </label>
+        <input type="text" id="Weight" name="Weight" size="3" maxlength="3" data-rule-required="true" data-msg-required="weight is Required" data-rule-min="10" data-msg-min="must be greater than 10" data-rule-max="500" data-msg-max="must be less than 500">  
+        <label for="Weight" class="error"></label><br>
     </div>
     <div>
         <label for="PhoneNumber" class="formlabel">Phone Number : </label>
-        <input type="text" id="PhoneNumber" name="PhoneNumber" size="14" maxlength="14">
+        <input type="text" id="PhoneNumber" name="PhoneNumber" size="14" maxlength="14" data-rule-required="true" data-msg-required="Phone Number Required" data-rule-phoneUS="true" data-msg-phoneUS="Invalid Phone Number">
+        <label for="PhoneNumber" class="error"></label><br>
     </div>
     <div>
-        <label class="formlabel">Marrige statis </label>
-        <select name="Auto" id="Auto">
+        <label class="formlabel" name="MaritalStatus">Marrige statis </label>
+        <select name="MaritalStatus" id="MaritalStatus">
           <option value="">Select an Auto...</option>
           <option value="S">Single</option>
           <option value="M">Married</option>
@@ -74,15 +82,18 @@
           <option value="L">Legally Separated</option>
           <option value="W">Widowed</option>
         </select>
+        <label for="MaritalStatus" class="error"></label><br>
 
     </div>
     <div>
         <label for="Address" class="formlabel">Address: </label>
-        <input type="text" id="Address" name="Address" size="30" maxlength="30">
+        <input type="text" id="Address" name="Address" size="30" maxlength="30" data-rule-required="true" data-msg-required="Enter an Address"> 
+        <label for="Address" class="error"></label><br>
     </div>
     <div>
         <label for="City" class="formlabel">City: </label>
-        <input type="text" id="City" name="City" size="30" maxlength="30">
+        <input type="text" id="City" name="City" size="30" maxlength="30" data-rule-required="true" data-msg-required="Enter a City">
+        <label for="City" class="error"></label><br>
    
         <label class="formlabel">State</label>
         <select name="State" id="State">
@@ -139,9 +150,11 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
         </select>
+        <label for="State" class="error"></label><br>
     
         <label for="Zip" class="formlabel">Zip: </label>
-        <input type="text" id="Zip" name="Zip" size="5" maxlength="5">
+        <input type="text" id="Zip" name="Zip" size="5" maxlength="5" data-rule-required="true" data-msg-required="Enter your Zip" data-rule-minlength="5" data-msg-min="must enter zip">
+        <label for="Zip" class="error"></label><br>
     </div>
     <div>
         <label class="formlabel">Taking Medications </label>
@@ -150,6 +163,7 @@
           <option value="Y">Yes </option>
           <option value="N">No </option>
         </select>
+        <label for="Medications" class="error"></label><br>
     </div>
 
     <div>
