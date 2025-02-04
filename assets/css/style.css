@@ -5,3 +5,10 @@
 body {
 background-color:rgb(188, 213, 211);
 }
+img{
+
+    max-width: 100%;
+}
+
+
+
