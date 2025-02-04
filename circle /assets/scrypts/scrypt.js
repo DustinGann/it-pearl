@@ -3,6 +3,8 @@ $( "#CircleForm" ).validate({
 
 });
 
+
+
 function CircleCalculations() {
 if ($( "#CircleForm" ).valid()){
    
@@ -44,9 +46,16 @@ function calculateArea(r)
 {
 return Math.PI *  (r*r)  ;
 }
+}
+
+function clearForm()
+{
+    document.getElementById("radius").value = "";
+    document.getElementById("radiuserror").value = "";
+    document.getElementById("radiuserror").innerHTML = "";
     
-    
 
-
-
+    document.getElementById("diameter").innerHTML = "";
+    document.getElementById("circumference").innerHTML = "";
+    document.getElementById("area").innerHTML = "";
 }
