@@ -1,0 +1,162 @@
+img{max-width: 100%;}
+
+body{
+    background-color: rgb(236, 235, 230);
+    margin: 0px;;
+}
+
+main{
+
+max-width: 95%;
+margin: auto;
+
+}
+header.primary{
+    position: sticky;
+    height: 20vh;
+    background-color: rgb(241, 241, 0);
+    margin: 0px;
+    
+   
+}
+
+
+header .container{
+   
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 20px;
+
+    height: 20vh;
+}
+
+header div #header1{
+    max-height: inherit ;
+    grid-column:span 8 ;
+    
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 20px;
+
+   
+    
+    
+}
+
+header img{
+   
+    max-height:18vh ;
+    grid-column:span 2 ;
+    
+
+    
+    margin: auto;
+    
+    font-size: 3rem;
+}
+header h1{
+    
+
+    grid-column:3/9 ;
+    grid-row:1/2 ;
+
+
+    margin: auto;
+    font-size: 3rem;
+}
+header nav{
+    background-color: rgb(184, 222, 14);
+
+    grid-column:9/13 ;
+}
+   
+section.content{
+    font-size: 1.2rem;
+    
+}
+
+section#gridM .container{
+   
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    
+    gap: 20px;
+}
+
+section#gridM #mainpara1{
+    
+    grid-column:1/13 ;
+    grid-row: 1/2;
+}
+
+section#gridM #article1{
+    background-color: rgb(255, 255, 255);
+    padding: 7px;
+
+    border: 2px solid #ffffff;
+  
+  border-radius: 4px ;
+
+    grid-row: 2/3;
+    grid-column:1/13 ;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    grid-template-columns: repeat(8,1fr);
+    gap: 5px;
+
+}
+section#gridM #article1 #mainimg1{
+    
+    
+    width: 45%;
+    padding-right: 2%;
+}
+section#gridM #article1 #mainpara2{
+    padding-right: 12%;
+    border-right:10px solid rgb(241, 241, 0);
+    
+    width: 45%;
+   
+}
+
+section#gridM #mainpara3{
+  
+    grid-column:1/13 ;
+    grid-row: 3/4;
+}
+
+
+section#gridM #article2{
+    grid-row: 4/5;
+    grid-column:1/13 ;
+
+    width: 80%;
+    margin: auto;
+
+    display: flex;
+    grid-template-columns: repeat(8,1fr);
+    gap: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 7px;
+
+    border: 2px solid #ffffff;
+    
+}
+section#gridM #mainimg2{
+    width: 45%;
+    margin-right: 2%;
+    
+}
+section#gridM #mainpara4{
+    width: 45%;
+    padding-right: 12%;
+    border-right:10px solid rgb(241, 241, 0);
+}
+
+
+
+footer{
+
+    background-color: yellow;
+}
