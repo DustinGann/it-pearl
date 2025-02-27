@@ -1,18 +1,34 @@
 img{max-width: 100%;}
 
+
 body{
+    
     background-color: rgb(236, 235, 230);
     margin: 0px;;
+    
 }
+
 
 main{
-
+    
 max-width: 95%;
 margin: auto;
+font-family: "Noto Sans", sans-serif;
+font-weight: 300;
+font-size: 1rem;
 
 }
+
 header.primary{
-    position: sticky;
+    font-family: "Noto Sans", sans-serif;
+font-weight: 300;
+font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+
+
+    position:fixed ;
+    top: 0;
+    width: 100%;
     height: 20vh;
     background-color: rgb(241, 241, 0);
     margin: 0px;
@@ -43,16 +59,24 @@ header div #header1{
     
 }
 
+header #logo{
+    max-height:18vh ;
+    margin: auto;
+    grid-column:span 1 ;
+    text-decoration: none;
+    display: inline-block;
+   
+}
 header img{
    
     max-height:18vh ;
-    grid-column:span 2 ;
     
+    border: none;
 
     
     margin: auto;
     
-    font-size: 3rem;
+   
 }
 header h1{
     
@@ -65,18 +89,73 @@ header h1{
     font-size: 3rem;
 }
 header nav{
-    background-color: rgb(184, 222, 14);
 
+ 
     grid-column:9/13 ;
-}
    
-section.content{
-    font-size: 1.2rem;
+
+    height: 100%;
+}
+header nav ul{
+    margin: 0px;
+    height: 100%;
+}
+header.primary nav li{
+    list-style-type: none;
+    height: 33.3%;
+    
     
 }
 
-section#gridM .container{
+header.primary nav li a{
+    
+    border-left:3px solid rgb(236, 235, 230);
+    border-radius: 5px;
+  height: 100%;
+    background-color:rgb(241, 241, 0);
+    
+    
+    display:block;
+    text-align:center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: .3s;
+  }
+
+  header.primary nav li :visited{
+color: black;
+  }
+  header.primary nav a:hover{
+  
+    background-color:rgb(223, 187, 4);
+    text-decoration: underline;
+    color:#ffffff;
+  }
+
+
+
    
+section.content{
+    margin-top: 20vh;
+    
+    margin-bottom: 40px;
+}
+
+h2{
+    margin: 0px;
+    
+}
+div#ATP{
+    padding-top: 35px;
+    margin: 0px;
+font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+    font-size: 1.7rem;
+}
+
+section#gridM .container{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
     display: grid;
     grid-template-columns: repeat(12,1fr);
     
@@ -94,6 +173,7 @@ section#gridM #article1{
     padding: 7px;
 
     border: 2px solid #ffffff;
+    border-left: 13px solid #ffffff;
   
   border-radius: 4px ;
 
@@ -111,6 +191,8 @@ section#gridM #article1 #mainimg1{
     
     width: 45%;
     padding-right: 2%;
+    height: auto;
+  object-fit: contain;
 }
 section#gridM #article1 #mainpara2{
     padding-right: 12%;
@@ -141,11 +223,14 @@ section#gridM #article2{
     padding: 7px;
 
     border: 2px solid #ffffff;
+    border-left: 13px solid #ffffff;
     
 }
 section#gridM #mainimg2{
     width: 45%;
     margin-right: 2%;
+    height: auto;
+  object-fit: contain;
     
 }
 section#gridM #mainpara4{
