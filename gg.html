@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Value History</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        select, input[type="date"] {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 5px 15px;
+            margin-right: 10px;
+        }
+        #errorMessage {
+            color: red;
+            margin: 10px 0;
+            display: none;
+        }
+        #chartContainer {
+            margin-top: 20px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Currency Value History</h1>
+    
+    <div class="form-group">
+        <label for="baseCurrency">Base Currency:</label>
+        <select id="baseCurrency">
+            <option value="USD">US Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">Great Britain Pound (GBP)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="convertCurrency">Convert to Currency:</label>
+        <select id="convertCurrency">
+            <option value="USD">US Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">Great Britain Pound (GBP)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate">
+    </div>
+
+    <div class="form-group">
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate">
+    </div>
+
+    <button onclick="showResults()">Show Results</button>
+    <button onclick="clearForm()">Clear</button>
+
+    <div id="errorMessage"></div>
+    <div id="chartContainer">
+        <canvas id="currencyChart"></canvas>
+    </div>
+
+    <script>
+       function showResults() {
+    const baseCurrency = document.getElementById('baseCurrency').value;
+    const convertCurrency = document.getElementById('convertCurrency').value;
+    const fromDate = document.getElementById('fromDate').value;
+    const toDate = document.getElementById('toDate').value;
+    const errorMessage = document.getElementById('errorMessage');
+
+    if (!baseCurrency || !convertCurrency || !fromDate || !toDate) {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'All fields are required';
+        return;
+    }
+
+    errorMessage.style.display = 'none';
+    const symbol = baseCurrency + convertCurrency;
+    const apiKey = 'YOUR_API_KEY';
+    const url = `https://api.polygon.io/v2/historic-quotes/C:` + symbol + `?from=` + fromDate + `&to=` + toDate + `&apiKey=${apiKey}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Error fetching data: ' + data.error;
+                return;
+            }
+
+            const dates = data.results.map(result => result.date);
+            const rates = data.results.map(result => result.close);
+
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            const ctx = document.getElementById('currencyChart').getContext('2d');
+            myChart = new Chart(
+                ctx,
+                {
+                    type: 'line',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: `One ${baseCurrency} to ${convertCurrency}`,
+                            data: rates,
+                            borderColor: 'rgba(0, 128, 128, 1)',
+                            backgroundColor: 'rgba(0, 128, 128, 0.2)',
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                title: {
+                                    display: true,
+                                    text: `${convertCurrency}`
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: `${baseCurrency} to ${convertCurrency}`
+                            }
+                        }
+                    }
+                }
+            );
+        })
+        .catch(error => {
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = 'Error: ' + error.message;
+        });
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Polygon - Company Details">
+    <meta name="keywords" content="HTML, CSS,JavaScript, AJAX, jQuery">
+    <meta name="author" content="Bruce Bauer">
+    <title>Polygon - Company Details</title>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="myform" onsubmit="return false">
+        <div class="formcontainer">
+            <h2>Stock Ticker Details</h2>
+
+
+            <label for="baseCurrency">Base Currency: </label>
+        <select id="baseCurrency" name="baseCurrency">
+            <option value="---">---</option>
+            <option value="USD">US Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">Great Britain Pound (GBP)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+        </select>
+        
+    
+        
+             <label for="convertCurrency">Convert Currency: </label>
+        <select id="convertCurrency" name="convertCurrency">
+            <option value="---">---</option>
+            <option value="USD">US Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">Great Britain Pound (GBP)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+
+
+        </select>
+
+
+            <label for="FromDate" class="formlabel">From Date:</label>
+            <input type="date" name="FromDate" id="FromDate" 
+                data-rule-required="true" data-msg-required="From Date is Required">
+            <label id="FromDateError" for="FromDate" class="error"></label>
+            <label for="ToDate" class="formlabel">To Date:</label>
+            <input type="date" name="ToDate" id="ToDate" 
+			     data-rule-required="true" data-msg-required="To Date is Required">
+	    <label id="ToDateError" for="ToDate" class="error"></label>
+            <br><br>
+            <input type="submit" value="DisplayStock" id="DisplayStock" name="DisplayStock" onclick="GetStock();">
+            <input type="submit" formnovalidate value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+            <hr>
+            <br>
+            <label for="company" class="formlabel">Company: </label>
+            <span id="company"></span><br>
+            <label for="address" class="formlabel">Address: </label>
+            <span id="address"></span><br>
+            <label for="employees" class="formlabel">Employees: </label>
+            <span id="employees"></span><br>
+            <label for="description" class="formlabel">Description: </label>
+            <span id="description"></span><br>
+            <label for="url" class="formlabel">URL: </label>
+            <a id="url"></a><br>
+            <hr>
+
+            <div class="clearfix">
+                <div class="img-container">
+                    <span id="StockValueTable"></span>
+                </div>
+                <div class="img-container">
+                    <span id="StockVolumeTable"></span>
+                </div>
+            </div>
+            <hr>
+            
+            <div class="clearfix">
+                <div class="img-container">
+                    <canvas id="chartjs-0" width="400" height="400"></canvas>
+                </div>
+                <div class="img-container">
+                    <canvas id="chartjs-1" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
