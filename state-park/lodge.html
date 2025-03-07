@@ -83,9 +83,22 @@
 
 
 
-</div>
-</section>
 
+
+</div>
+
+
+<form id="myform" onsubmit="return false">
+    <label for="Placel" class="formlabel">Location: </label>
+    <input type="text" id="Placel" name="Placel" size="30" maxlength="30" data-rule-required="true" data-msg-required="Placel  is Required" aria-invalid="true">
+    <label for="FirstName" class="error"></label><br>
+        <input type="submit" value="Displaytemp" id="Displaytemp" name="Displaytemp" onclick="GetTemp();">
+        <input type="submit" formnovalidate value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+</form>
+
+<div id="ass"></div>
+
+</section>
     </main>
 
     <Footer class="primary">
@@ -94,5 +107,12 @@
         <a href="mailto:email@address.com">Email Link</a>
         
         </Footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+     <script src="assets/js/script.js"></script>
+
+   
 </body>
 </html>

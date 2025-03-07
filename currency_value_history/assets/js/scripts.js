@@ -7,40 +7,17 @@ async function GetStock() {
     // If all of the form elements are valid, the get the form values
     if (form.valid()) {
         
-        let StockSymbol = document.getElementById("StockSymbol").value;
+        
         let apiKey = "35eaVfKsObXpSg2O4kMLj9udr2DgVW1f"
+        let baseCurrency = document.getElementById("baseCurrency").value;
+        let convertCurrency = document.getElementById("convertCurrency").value;
+
         let FromDate = document.getElementById("FromDate").value;
         let ToDate = document.getElementById("ToDate").value;
 
-        /* URL for AJAX Call */
-        let myURL1 = "https://api.polygon.io/v3/reference/tickers/" + StockSymbol + "?apiKey=" + apiKey;
-        /* Make the AJAX call */
-        let msg1Object = await fetch(myURL1);
-        /* Check the status */
-        if (msg1Object.status >= 200 && msg1Object.status <= 299) {            
-            let msg1JSONText = await msg1Object.text();
-            // Parse the JSON string into an object
-            let msg1 = JSON.parse(msg1JSONText);
-            /* Your code to process the result goes here - 
-               display the returned message */
-            document.getElementById("company").innerHTML = msg1.results.name;
-            document.getElementById("address").innerHTML = msg1.results.address.address1 + ", " + msg1.results.address.city + ", " 
-                + msg1.results.address.state + "   " + msg1.results.address.postal_code;
-            document.getElementById("employees").innerHTML = msg1.results.total_employees;
-            document.getElementById("description").innerHTML = msg1.results.sic_description;
-            document.getElementById("url").innerHTML = msg1.results.homepage_url;
-            document.getElementById("url").href = msg1.results.homepage_url;
-        }
-        else {
-            /* AJAX complete with error - probably invalid stock ticker symbol */
-                /* Your code to process the result goes here - 
-                   display the returned message */
-            alert("Stock Not Found - Status: " + msg1Object.status)
-            return;
-        }        
  
         /* URL for AJAX Call */
-        let myURL2 = "https://api.polygon.io/v2/aggs/ticker/" + StockSymbol + "/range/1/day/" + FromDate + "/" + ToDate + "?unadjusted=false&sort=asc&limit=32&apiKey=" + apiKey;
+        let myURL2 = "https://api.polygon.io/v2/aggs/ticker/C:" + baseCurrency + convertCurrency + "/range/1/day/" + FromDate + "/" + ToDate + "?adjusted=true&sort=asc&apiKey=" + apiKey;
         /* Make the AJAX call */
         let msg2Object = await fetch(myURL2);
         /* Check the status */
