@@ -1,6 +1,11 @@
 async function GetTemp() {
     "use strict";
 
+
+   
+
+    
+
     let form = $("#myform");
 
 
@@ -61,6 +66,8 @@ async function GetTemp() {
                         let tempdate = new Date(msg3.hourly.time[i]);
                         /* extract the date string from the value */
                         Heatdate[i] = tempdate.toLocaleString();
+                        
+                        //toLocaleString
 
                         //toLocalDateString()
                         //toLocalTimeString()
@@ -69,8 +76,8 @@ async function GetTemp() {
 
                 let Heatvaluetable = "";
                 if (numdays > 0) {
-                    Heatvaluetable = Heatvaluetable + "<table><caption>Temprature </caption><tr><th>Date</th><th>Price</th></tr>";
-                    for (let i = 0; i < numdays; i++) {
+                    Heatvaluetable = Heatvaluetable + "<table><caption>Temprature </caption><tr><th>Date</th><th>Temperature</th></tr>";
+                    for (let i = 0; i < 10; i++) {
                         Heatvaluetable = Heatvaluetable + "<tr><td>" + Heatdate[i] + "</td><td>" + Heatvalue[i] + "</td></tr>";
                     }
                     Heatvaluetable = Heatvaluetable + "</table>"

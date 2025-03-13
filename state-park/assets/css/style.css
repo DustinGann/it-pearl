@@ -12,7 +12,7 @@ body{
 
 
 main{
-    
+    min-height: 77vh;
 max-width: 95%;
 margin: auto;
 font-family: "Noto Sans", sans-serif;
@@ -321,7 +321,10 @@ color: black;
 
 
 
+p#spacer{
 
+    padding-top: 110px;
+}
 
 
 
