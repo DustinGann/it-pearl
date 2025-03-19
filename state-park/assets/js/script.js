@@ -2,7 +2,8 @@ async function GetTemp() {
     "use strict";
 
 
-   
+ 
+  
 
     
 
@@ -50,8 +51,10 @@ async function GetTemp() {
                  
             
 
-                let Heatdate = [];
-                let Heatvalue = [];
+                 let Heatdate = 0;
+                let Heatvalue = 0;
+                  Heatdate = [];
+                 Heatvalue = [];
 
                 
                  
@@ -131,4 +134,20 @@ async function GetTemp() {
 
 
 
+}
+
+
+function ClearForm() {
+    "use strict;"
+
+    let canvas0 = document.getElementById("chartjs-1");
+    let context0 = canvas0.getContext('2d');    
+    context0.clearRect(0, 0, canvas0.width, canvas0.height);
+
+    document.getElementById("Heatvaluetable").innerHTML = "";
+    
+    
+    document.getElementById("Placel").value = "Daisy State Park";
+    
+    
 }
