@@ -144,6 +144,8 @@ function ClearForm() {
     let context0 = canvas0.getContext('2d');    
     context0.clearRect(0, 0, canvas0.width, canvas0.height);
 
+
+
     document.getElementById("Heatvaluetable").innerHTML = "";
     
     
